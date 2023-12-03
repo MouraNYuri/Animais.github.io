@@ -23,5 +23,5 @@ export default function initFetchAnimais() {
       console.log(erro);
     }
   }
-  fetchAnimais("./animaisAPI.JSON");
+  fetchAnimais("./animaisAPI.json");
 }
