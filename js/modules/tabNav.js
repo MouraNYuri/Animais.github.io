@@ -1,22 +1,28 @@
-export default function initTabNav() {
-  const imagens = document.querySelectorAll('[data-tab="menu"] li');
-  const imagemDescricao = document.querySelectorAll('[data-tab="content"] section');
-
-  function mostrarDescricao(index) {
-    imagemDescricao.forEach((section) => {
-      section.classList.remove("ativo");
-    });
-    const direction = imagemDescricao[index].dataset.anime;
-    imagemDescricao[index].classList.add("ativo", direction);
+export default class TabNav {
+  constructor(menu, content) {
+    this.imagens = document.querySelectorAll(menu);
+    this.imagemDescricao = document.querySelectorAll(content);
+    this.activeClass = "ativo";
   }
-  if (imagens.length && imagemDescricao.length) {
-    imagemDescricao[0].classList.add("ativo");
-    imagemDescricao[0].classList.add("show-right");
 
-    imagens.forEach((imagem, index) => {
-      imagem.addEventListener("click", () => {
-        mostrarDescricao(index);
-      });
+  mostrarDescricao(index) {
+    this.imagemDescricao.forEach((section) => {
+      section.classList.remove(this.activeClass);
     });
+    const direction = this.imagemDescricao[index].dataset.anime;
+    this.imagemDescricao[index].classList.add(this.activeClass, direction);
+  }
+
+  addTabNavEvent() {
+    this.imagens.forEach((imagem, index) => {
+      imagem.addEventListener("click", () => this.mostrarDescricao(index));
+    });
+  }
+
+  init() {
+    if (this.imagens.length && this.imagemDescricao.length) {
+      this.mostrarDescricao(0);
+      this.addTabNavEvent();
+    }
   }
 }
