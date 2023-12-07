@@ -1,4 +1,4 @@
-import AnimaNumeros from "./anima-numeros";
+import AnimaNumeros from "./anima-numeros.js";
 
 export default function initFetchAnimais() {
   function createAnimal(animal) {
@@ -28,9 +28,5 @@ export default function initFetchAnimais() {
     }
   }
 
-<<<<<<< HEAD
-  fetchAnimais('../../animais-api.json'');
-=======
-  fetchAnimais("./animaisapi.json");
->>>>>>> dce5b3ba6d371c2cb7b5c67830772664ce45fb52
+  fetchAnimais("./animais-api.json");
 }
