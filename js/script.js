@@ -9,6 +9,7 @@ import Functionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scroll-anima.js";
+import SlideNav from "./modules/slide.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -43,6 +44,11 @@ menuMobile.init();
 
 const funcionamento = new Functionamento("[data-semana]", "aberto");
 funcionamento.init();
+
+const slide = new SlideNav(".slide", ".slide-wrapper");
+slide.init();
+slide.addArrow(".prev", ".next");
+slide.addControl(".custom-controls");
 
 fetchAnimais("./animais-api.json", ".numeros-grid");
 
