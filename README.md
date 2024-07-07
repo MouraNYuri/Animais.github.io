@@ -1,1 +1,1 @@
-Acesse por aqui: https://elegant-gelato-5a33dc.netlify.app
+Acesse por aqui: https://animais-projeto-02.netlify.app
